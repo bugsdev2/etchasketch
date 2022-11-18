@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head lang='en'>
+	<title>Etch-a-Sketch</title>
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>ETCH-A-SKETCH</h1>
+		<div class='num-form'>
+			<h2 id='display'>Use the slider to set your canvas!</h2>
+			<form>
+				<input type='range' min='2' max='100' step='1' name="slider" value="16" id='slider' oninput=run()></input>
+				
+			</form>
+		</div>
+		<div class='grid-container'></div>
+	</div>
+	
+	<script type='text/javascript' src='js.js'></script>
+</body>
