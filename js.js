@@ -1,7 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
-
+document.addEventListener('contextmenu', event => event.preventDefault());
 function run() {
 	if (gridContainer.childElementCount != 0) {
 		const deleteDiv = document.querySelectorAll('.grid-container div');
@@ -24,6 +24,8 @@ function run() {
 	function clickhover(e){
 		if (e.buttons == 1) {
 			this.classList.add('mouse-hover');
+		} else if (e.buttons == 2) {
+			this.classList.remove('mouse-hover');
 		}
 		
 	}
