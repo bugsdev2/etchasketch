@@ -21,8 +21,11 @@ function run() {
 	div.addEventListener('mouseenter', clickhover);
 	})
 
-	function clickhover(){
-		this.classList.add('mouse-hover');
+	function clickhover(e){
+		if (e.buttons == 1) {
+			this.classList.add('mouse-hover');
+		}
+		
 	}
 	
 };
