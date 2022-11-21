@@ -15,7 +15,7 @@ function run() {
 			(item.classList == "mouse-hover") ? refreshErr = true : refreshErr == false;
 		});
 		if (refreshErr) {
-			if (confirm('This action will clear the canvas. Do you want to continue?')) {
+			if (confirm('This will clear the canvas. Do you want to continue?')) {
 				deleteDiv.forEach(item => item.remove());
 			} else {
 				return;
