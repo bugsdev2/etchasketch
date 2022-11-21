@@ -8,13 +8,17 @@
 
 <body ondragstart="return false;">
 	<div class='wrapper'>
-		<h1>ETCH-A-SKETCH</h1>
+		<div>
+			<h1>ETCH-A-SKETCH</h1>
+			<p>Right click to draw. Left click to erase.</p>
+		</div>
 		<div class='num-form'>
-			<h2 id='display'>Use the slider to set your canvas!</h2>
+			
 			<form>
 				<input type='range' min='2' max='100' step='1' name="slider" value="16" id='slider' oninput=run()></input>
 				
 			</form>
+			<h2 id='display'>Use the slider to set your canvas!</h2>
 		</div>
 		<div class='grid-container'></div>
 	</div>

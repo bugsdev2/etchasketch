@@ -1,7 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
-document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', e => e.preventDefault());
 
 function run() {
 	if (gridContainer.childElementCount != 0) {
@@ -24,8 +24,8 @@ function run() {
 	
 	document.body.style.setProperty('--num', range.value)
 	for (let i=0; i<(range.value**2); i++) {
-	const div = document.createElement('div');
-	gridContainer.appendChild(div);
+		const div = document.createElement('div');
+		gridContainer.appendChild(div);
 	}
 
 	const divs = document.querySelectorAll('.grid-container > div');
