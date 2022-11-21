@@ -36,8 +36,8 @@ body {
 	grid-template-columns: repeat(var(--num), 1fr);
 	grid-template-rows: repeat(var(--num), 1fr);
 	background: white;
-	width: 90%;
-	height: 90%;
+	width: 85vh;
+	height: 85vh;
 }
 
 .grid-container > div {

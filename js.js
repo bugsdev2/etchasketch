@@ -1,7 +1,8 @@
 const gridContainer = document.querySelector('.grid-container');
 const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
-document.addEventListener('contextmenu', event => event.preventDefault());
+//~ document.addEventListener('contextmenu', event => event.preventDefault());
+
 function run() {
 	if (gridContainer.childElementCount != 0) {
 		const deleteDiv = document.querySelectorAll('.grid-container div');
@@ -18,7 +19,8 @@ function run() {
 	const divs = document.querySelectorAll('.grid-container > div');
 
 	divs.forEach(div => {
-	div.addEventListener('mouseenter', clickhover);
+		div.setAttribute('draggable', 'false');
+		div.addEventListener('mouseenter', clickhover);
 	})
 
 	function clickhover(e){
