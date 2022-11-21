@@ -1,13 +1,25 @@
 const gridContainer = document.querySelector('.grid-container');
 const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
-//~ document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 function run() {
 	if (gridContainer.childElementCount != 0) {
 		const deleteDiv = document.querySelectorAll('.grid-container div');
-		deleteDiv.forEach(item => item.remove());
+		let refreshErr;
+		deleteDiv.forEach(item => {
+			(item.classList == "mouse-hover") ? refreshErr = true : refreshErr == false;
+		});
+		if (refreshErr) {
+			if (confirm('This action will clear the canvas. Do you want to continue?')) {
+				deleteDiv.forEach(item => item.remove());
+			} else {
+				return;
+			};
+		}
+		
 	}
+	
 	h2Display.textContent = range.value + ' x ' + range.value;
 	
 	document.body.style.setProperty('--num', range.value)
