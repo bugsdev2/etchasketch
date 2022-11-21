@@ -3,6 +3,10 @@ const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
 document.addEventListener('contextmenu', e => e.preventDefault());
 
+function random(num) {
+	return Math.floor(Math.random()*num);
+}
+
 function run() {
 	if (gridContainer.childElementCount != 0) {
 		const deleteDiv = document.querySelectorAll('.grid-container div');
