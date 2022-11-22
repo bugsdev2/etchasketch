@@ -13,10 +13,12 @@
 			<p>Left click to draw. Right click to erase.</p>
 		</div>
 		<div class='num-form'>
-			
+			<div class="button-container">
+				<button><input type='color' value='#000000'></input></button>
+				<button id='random-button'></button>
+			</div>
 			<form>
-				<input type='range' min='2' max='100' step='1' name="slider" value="16" id='slider' oninput=run()></input>
-				
+				<input type='range' min='2' max='100' step='1' name="slider" id='slider' oninput=run()></input>
 			</form>
 			<h2 id='display'>Use the slider to set your canvas!</h2>
 		</div>

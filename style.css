@@ -12,6 +12,7 @@ body {
 	--red: 255;
 	--blue: 255;
 	--green: 255;
+	--color-picked: #000000;
 }
 
 .wrapper {
@@ -83,6 +84,46 @@ p {
 	font-family: 'Cabin Sketch', sans-serif;
 	font-size: 22px;
 	font-weight: 400;
+}
+
+.button-container {
+	display: flex;
+	place-items:center;
+	gap: 1rem;
+}
+
+.button-container button {
+	width: 50px;
+	height: 50px;
+}
+
+input[type='color'] {
+	width: 47px;
+	height: 47px;
+	background: none;
+	border: none;
+	padding:0;
+	margin: 0;
+}
+
+input[type='color']::-moz-color-swatch {
+	border:2px solid gray;
+	border-radius: 2px;
+	
+}
+
+
+#random-button {
+	width: 50px;
+	height: 50px;
+	background: url('rainbow1.png') no-repeat;
+	background-size: cover;
+	border-radius: 5px;
+	transition: transform 0.1s;
+}
+
+.button-container .selected {
+	transform: scale(1.2);
 }
 
 h2 {
