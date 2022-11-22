@@ -3,6 +3,7 @@ const h2Display = document.getElementById('display');
 const range = document.getElementById('slider');
 const randomButton = document.getElementById('random-button');
 const inputColor = document.querySelector('input[type="color"]');
+const eraseCanvas = document.getElementById('erase-canvas');
 let check;
 
 // Disable right click context menu on the document because it will interfere with the right click erasing feature.
@@ -30,6 +31,29 @@ randomButton.addEventListener('click', e => {
 	}
 })
 
+// erase canvas button feature added which will give appropriate alerts in different sitations
+eraseCanvas.addEventListener('click', erase);
+	
+	function erase(e) {
+		const deleteDiv = document.querySelectorAll('.grid-container div');
+		let refreshErr;
+		deleteDiv.forEach(item => {
+			item.hasAttribute('style') ? refreshErr = true : refreshErr == false;
+		});
+		if (refreshErr) {
+			if (confirm('This will clear the canvas. Do you want to continue?')) {
+				deleteDiv.forEach(item => item.removeAttribute('style'));
+			} else {
+				return;
+			};
+		} else if (gridContainer.childElementCount != 0) {
+			alert('The canvas is already clean and ready to use.');
+				
+		} else {
+			alert('Use the slider to create a new canvas.');
+		}
+		
+	}
 
 // main function which will run when the slider is moved.
 function run() {
@@ -87,6 +111,8 @@ function run() {
 		}
 		
 	}
+	
+	
 	
 };
 	

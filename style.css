@@ -8,7 +8,7 @@
 
 body {
 	background: #1A1A1A;
-	--num: 16;
+	--num
 	--red: 255;
 	--blue: 255;
 	--green: 255;
@@ -132,4 +132,11 @@ h2 {
 	font-size: 25px;
 	font-family: 'Cabin Sketch', sans-serif;
 	font-weight: 400;
+}
+
+#erase-canvas {
+	padding: 3px 30px;
+	margin-top: 30px;
+	font-size: 16px;
+	font-family: 'Cabin Sketch', sans-serif;
 }
