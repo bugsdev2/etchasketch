@@ -65,7 +65,7 @@ function run() {
 	const divs = document.querySelectorAll('.grid-container > div');
 	divs.forEach(div => {
 		div.setAttribute('draggable', 'false');
-		div.addEventListener('mouseenter', clickhover);
+		div.addEventListener('mouseover', clickhover);
 	})
 	
 	
