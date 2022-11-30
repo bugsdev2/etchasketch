@@ -7,7 +7,7 @@ const eraseCanvas = document.getElementById('erase-canvas');
 let check;
 
 // Disable right click context menu on the document because it will interfere with the right click erasing feature.
-//~ document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('contextmenu', e => e.preventDefault());
 
 // random function to randomize stuff.
 function random(num) {
@@ -36,25 +36,10 @@ eraseCanvas.addEventListener('click', erase);
 	
 	function erase(e) {
 		const deleteDiv = document.querySelectorAll('.grid-container div');
-		let refreshErr = false;
-		let flag = true;
-		// using this every function produces quicker results . . . . . . .
-		Array.from(deleteDiv).every(item => {
-			if (flag) {
-				if (item.hasAttribute('style')) {
-					refreshErr = true;
-					flag = false;
-				} 
-				
-			}
+		let refreshErr;
+		deleteDiv.forEach(item => {
+			item.hasAttribute('style') ? refreshErr = true : refreshErr == false;
 		});
-		
-		// . . . . . . . than using this forEach loop
-		//~ deleteDiv.forEach(item => {
-			//~ item.hasAttribute('style') ? refreshErr = true : refreshErr == false;
-		//~ });
-		
-		
 		if (refreshErr) {
 			if (confirm('This will clear the canvas. Do you want to continue?')) {
 				deleteDiv.forEach(item => item.removeAttribute('style'));
@@ -75,26 +60,18 @@ function run() {
 	
 	// check to see if the grid is already populated by 'modified' divs, if there's some drawing on the canvas. If so, it will prompt a confirm action asking if the canvas be cleared or not.
 	if (gridContainer.childElementCount != 0) {
-		let flag = true;
-		if (flag) {
-			const deleteDiv = document.querySelectorAll('.grid-container div');
-			let refreshErr;
-			deleteDiv.forEach(item => {
-				item.hasAttribute('style') ? refreshErr = true : refreshErr == false;
-				flag = false;
-			});
-			
-			
-			if (refreshErr) {
+		const deleteDiv = document.querySelectorAll('.grid-container div');
+		let refreshErr;
+		deleteDiv.forEach(item => {
+			item.hasAttribute('style') ? refreshErr = true : refreshErr == false;
+		});
+		if (refreshErr) {
 			if (confirm('This will clear the canvas. Do you want to continue?')) {
 				deleteDiv.forEach(item => item.remove());
 			} else {
 				return;
 			};
 		}
-		}
-		
-		
 		
 	}
 	
